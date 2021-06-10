@@ -344,7 +344,7 @@ class _MainScreenState extends State<MainScreen> {
       ..add(
           'طورنا مستوي الامان فهتلاقي حفظ تلقائي لكل لمسة في البرنامج كل ثانية و كمان فى باك اب بيتاخد بشكل تلقائي ممكن تتحكم فى معدل الوقت بدءا من ساعة وحتي 12 ساعة وكمان تقدر تحفظ الباك اب يدويا في اي وقت')
       ..add(
-          'اك اب Backup Files بتتحفظ في 3 اماكن مختلفة على جهازك ممكن تظبطه يحفظ على فلاشة او هارد خارجي ودا هيديلك امان اعلى وكمان استعادة باك اب لو احتجت تنزل ويندوز جديد بتكون فى اقل من دقيقة')
+          'Backup Files بتتحفظ في 3 اماكن مختلفة على جهازك ممكن تظبطه يحفظ على فلاشة او هارد خارجي ودا هيديلك امان اعلى وكمان استعادة باك اب لو احتجت تنزل ويندوز جديد بتكون فى اقل من دقيقة')
       ..add(
           'نظام تتبع طلبات العملاء و متابعة الاصناف المطلوبة وووصلها فى المخزون')
       ..add(
@@ -427,8 +427,8 @@ class _MainScreenState extends State<MainScreen> {
                           padding: const EdgeInsets.symmetric(horizontal: 8),
                           child: Container(
                             height: MediaQuery.of(context).size.height - 250,
-                            decoration: BoxDecoration(
-                                color: Colors.pinkAccent.withAlpha(100),
+                            decoration: BoxDecoration(border: Border.all(color: Colors.pinkAccent),
+                                color: Colors.pinkAccent.withAlpha(5),
                                 borderRadius: BorderRadius.circular(15)),
                           ),
                         ),
