@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 
 void main() {
   runApp(MyApp());
@@ -57,7 +58,7 @@ class _BottomNavBarV2State extends State<BottomNavBarV2> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white.withAlpha(55),
+      backgroundColor: Colors.white,
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -279,20 +280,78 @@ class Tuts extends StatelessWidget {
   }
 }
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   const MainScreen({
     Key key,
   }) : super(key: key);
 
   @override
+  _MainScreenState createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  List<String> _images = List();
+  List<String> _headers = List();
+
+  @override
+  void initState() {
+    _images
+      ..add('https://scontent.fcai21-1.fna.fbcdn.net/v/t1.6435-9/178368903_306612707501399_7927093819376549802_n.png?_nc_cat=108&ccb=1-3&_nc_sid=973b4a&_nc_ohc=UoALy6f3K40AX-fS4a2&_nc_ht=scontent.fcai21-1.fna&oh=6a90908125b375ea32ed7abd2f1c1dd2&oe=60E9E4B4')
+      ..add('https://scontent.fcai21-1.fna.fbcdn.net/v/t1.6435-9/151994890_268969037932433_7259992956132354806_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=973b4a&_nc_ohc=ZuPe1J9j-koAX-XY9uO&_nc_ht=scontent.fcai21-1.fna&oh=b0947f9ce32f72042e3b8b125412aeea&oe=60E8C161')
+      ..add('https://scontent.fcai21-1.fna.fbcdn.net/v/t1.6435-9/178368903_306612707501399_7927093819376549802_n.png?_nc_cat=108&ccb=1-3&_nc_sid=973b4a&_nc_ohc=UoALy6f3K40AX-fS4a2&_nc_ht=scontent.fcai21-1.fna&oh=6a90908125b375ea32ed7abd2f1c1dd2&oe=60E9E4B4')
+      ..add('https://scontent.fcai21-1.fna.fbcdn.net/v/t1.6435-9/146826091_259335388895798_347846442415628470_n.jpg?_nc_cat=107&ccb=1-3&_nc_sid=973b4a&_nc_ohc=VbcDHP6D408AX9dAq4S&_nc_ht=scontent.fcai21-1.fna&oh=67d7c9fa1f000651e4a99dc8feeb7204&oe=60E7B2E9');
+    _headers
+      ..add('First Image')
+      ..add('Second Image')
+      ..add('Third Image')
+      ..add('Fourth Image');
+    super.initState();
+  }
+
+  Widget _customScrollView() {
+    return CustomScrollView(
+      slivers: <Widget>[
+        SliverAppBar(
+          expandedHeight: 250.0,
+          floating: false,
+          pinned: true,
+          flexibleSpace: FlexibleSpaceBar(
+              centerTitle: true,
+              title: Text("PharmaCLick",
+                  style: TextStyle(
+                    color: Colors.pinkAccent,
+                    fontSize: 15.0,
+                  )),
+              background: Swiper(
+                itemCount: _images.length,
+                itemBuilder: (BuildContext context, int index) => Image.network(
+                  _images[index],
+                  fit: BoxFit.cover,
+                ),
+                autoplay: true,
+              )),
+        ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+                  (context, index) => Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 75,
+                  color: Colors.black12,
+                ),
+              ),
+              childCount: 10),
+        )
+      ],
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Center(
-      child: Text(
-        'MainScreen',
-        style: TextStyle(fontSize: 65),
-      ),
-    ));
+    return Scaffold(
+      //appBar: AppBar(backgroundColor: Colors.pinkAccent,elevation: 0,),
+      body: _customScrollView(),
+    );
   }
 }
 
