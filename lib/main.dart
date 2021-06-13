@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:pharmaclickapp/func.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(MyApp());
@@ -162,13 +166,84 @@ class Contact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Center(
-      child: Text(
-        'Contact Us',
-        style: TextStyle(fontSize: 65),
-      ),
-    ));
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.green,
+          title: Text(
+            'تواصل معانا',
+            style: TextStyle(
+              fontFamily: "arn",
+            ),
+          ),
+          centerTitle: true,
+        ),
+        body: Directionality(
+          textDirection: TextDirection.rtl,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 8),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(4)),
+                    width: MediaQuery.of(context).size.width,
+                    child: Text(
+                      'للتواصل و الاستعلام عن البرنامج يسعدنا تواصلك معانا عن طريق',textAlign: TextAlign.justify,
+                      style: TextStyle(
+                          fontSize: 20, fontFamily: "arn", color: Colors.green),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 4),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(4)),
+                    width: MediaQuery.of(context).size.width,
+                    child: Text(
+                      'لتواصل و الاستعلام عن البرنامج يسعدنا تواصلك معانا عن طريق',
+                      style: TextStyle(
+                          fontSize: 20, fontFamily: "arn", color: Colors.green),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 4),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(4)),
+                    width: MediaQuery.of(context).size.width,
+                    child: Text(
+                      'لتواصل و الاستعلام عن البرنامج يسعدنا تواصلك معانا عن طريق',
+                      style: TextStyle(
+                          fontSize: 20, fontFamily: "arn", color: Colors.green),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 4),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(4)),
+                    width: MediaQuery.of(context).size.width,
+                    child: Text(
+                      'لتواصل و الاستعلام عن البرنامج يسعدنا تواصلك معانا عن طريق',
+                      style: TextStyle(
+                          fontSize: 20, fontFamily: "arn", color: Colors.green),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ));
   }
 }
 
@@ -194,11 +269,11 @@ class Updates extends StatelessWidget {
       body: SingleChildScrollView(
           child: Column(
         children: [
-          updateElemnt('الجديد فى الاصدار 6.5',
+          updateElemnt('شرح تحديث برنامج Pharmaclick لاخر اصدار',
               'تفعيل تخصيم المرتجعات من الديون عند تنفيذ ارجاع من العملاء- تحسين بيانات تقفيل المبيعات اليومية لتكون اوضح- تحسين فى مراجعة بيانات فواتير العملاء قبل الحفظ- امكانية مراجعة فواتير البيع من تقارير العملاء الكاملة- تحسين بيانات الاحصائيات العامة- تحسين البحث و الاضافة الى الطلبيات- تحسين اقسام النواقص وتفعيل اعادة التحميل من داخل البرنامج- تحسين عرض الكميات فى فواتير العملاء المطبوعة-امكانية تصدير النواقص الغير متوفرة الى اكسيل- تفعيل فلتر لمعرفة الادوية التى تحت نظام المخزون التلقائي و الغير مفعلة فى قسم الادوية'),
-          updateElemnt('الجديد فى الاصدار 6.4',
+          updateElemnt('اطبع باركود لكل المخزون و للطلبيات بكليك واحدة',
               'التحكم فى سيستم الديون بالايقاف و التفعيل او وضع حد اقصي لكل العملاء او لعميل معين- اضافة اداة صيانة لفحص الاصناف المكررة وحذفها- تحسين عرض حسابات الشركات فى الشركات - قسم المشتروات- امكانية استعراض النواقص كلها بغض النظر عن حالة الطلب- امكانية استعراض النواقص اليدوية فقط- تفعيل امكانية اعادة فتح الفاتورة مع العلم انه عند فتح الفاتورة مرة اخري سيتم حذف الدين و المرتجع المتعلق بهذه الفاتورة- لا يمكن فتح فاتورة تم عمل اغلاق يومي بعد بيعها او تم دفع جزء من الدين المرتبط بها- غلق مشكلة تمرير باركود بالخطاء مكان كمية التكويد او الكمية المباعة- غلق مشكلة ادخال خصم تكويد بالسالب'),
-          updateElemnt('الجديد فى الاصدار 6.3',
+          updateElemnt('ضبط اعدادات طباعة الباركود فى Pharmaclick',
               'تفعيل متابعة تعديل المخزون يدويا وظهوره في حركة الصنف- تفعيل البيع بالسالب لجميع الاصناف بشكل افتراضي يمكنك تعديل الضبط من الاعدادت العامة- تفعيل تسجيل النواقص يدويا وتم اضافتها للقائمة السريعة اللي بتظهر تحت اسم الصنف- عند تسجيل النواقص يمكنك ربطها بالعملاء وسيصلك تنبيه عند توفر الصنف- تفعيل المتابعة الشهرية لطلبات العملاء- تفعيل اظهار واخفاء الضريبة و الموظف فى الفاتورة من الاعدادات- تفعيل امكانية حفظ باك اب فى مسار اضافي ثالث- تحسينات في عرض المخزون في الاقسام المختلفة'),
           SizedBox(
             height: 75,
@@ -262,6 +337,69 @@ class updateElemnt extends StatelessWidget {
   }
 }
 
+class tutsElemnt extends StatelessWidget {
+  String a, url;
+
+  tutsElemnt(this.a, this.url);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+            color: Colors.white, borderRadius: BorderRadius.circular(5)),
+        child: Directionality(
+          textDirection: TextDirection.rtl,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: InkWell(
+              onTap: () async {
+                if (Platform.isIOS) {
+                  if (await canLaunch(url)) {
+                    await launch(url, forceSafariVC: false);
+                  } else {
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  }
+                } else {
+                  if (await canLaunch(url)) {
+                    await launch(url);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+                }
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    a,
+                    style: TextStyle(
+                        color: Colors.pinkAccent,
+                        fontFamily: "arn",
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Image.network(
+                    'https://cdn.havecamerawilltravel.com/photographer/files/2020/01/youtube-logo-new.jpg',
+                    height: 130,
+                    width: MediaQuery.of(context).size.width,
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class PharmacyAccount extends StatelessWidget {
   const PharmacyAccount({
     Key key,
@@ -286,13 +424,35 @@ class Tuts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Center(
-      child: Text(
-        'Tuts',
-        style: TextStyle(fontSize: 65),
+    return Scaffold(
+      backgroundColor: Colors.greenAccent[100].withAlpha(50),
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.green,
+        title: Text(
+          'شروحات البرنامج',
+          style: TextStyle(
+            fontFamily: "arn",
+          ),
+        ),
       ),
-    ));
+      body: SingleChildScrollView(
+          child: Column(
+        children: [
+          tutsElemnt('شرح تحديث برنامج Pharmaclick لاخر اصدار',
+              'https://www.youtube.com/watch?v=Nz29foLXXKc'),
+          tutsElemnt('اطبع باركود لكل المخزون و للطلبيات بكليك واحدة',
+              'https://www.youtube.com/watch?v=Nz29foLXXKc'),
+          tutsElemnt('ضبط اعدادات طباعة الباركود فى Pharmaclick',
+              'https://www.youtube.com/watch?v=Nz29foLXXKc'),
+          tutsElemnt('ضبط اعدادات طباعة الباركود فى Pharmaclick',
+              'https://www.youtube.com/watch?v=Nz29foLXXKc'),
+          SizedBox(
+            height: 75,
+          )
+        ],
+      )),
+    );
   }
 }
 
@@ -427,7 +587,8 @@ class _MainScreenState extends State<MainScreen> {
                           padding: const EdgeInsets.symmetric(horizontal: 8),
                           child: Container(
                             height: MediaQuery.of(context).size.height - 250,
-                            decoration: BoxDecoration(border: Border.all(color: Colors.pinkAccent),
+                            decoration: BoxDecoration(
+                                border: Border.all(color: Colors.pinkAccent),
                                 color: Colors.pinkAccent.withAlpha(5),
                                 borderRadius: BorderRadius.circular(15)),
                           ),
@@ -454,7 +615,7 @@ class BNBCustomPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = new Paint()
-      ..color = Colors.white
+      ..color = Colors.grey.shade200
       ..style = PaintingStyle.fill;
 
     Path path = Path();
