@@ -205,10 +205,14 @@ class Contact extends StatelessWidget {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(4)),
                     width: MediaQuery.of(context).size.width,
-                    child: Text(
-                      'لتواصل و الاستعلام عن البرنامج يسعدنا تواصلك معانا عن طريق',
-                      style: TextStyle(
-                          fontSize: 20, fontFamily: "arn", color: Colors.green),
+                    child: Row(
+                      children: [
+                        Text(
+                          'لتواصل و الاستعلام عن البرنامج يسعدنا تواصلك معانا عن طريق',
+                          style: TextStyle(
+                              fontSize: 20, fontFamily: "arn", color: Colors.green),
+                        ),
+                      ],
                     ),
                   ),
                 ),
