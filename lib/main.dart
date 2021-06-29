@@ -3,7 +3,10 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:md2_tab_indicator/md2_tab_indicator.dart';
+import 'package:pharmaclickapp/NavDcreans/ContactUs.dart';
 import 'package:pharmaclickapp/func.dart';
+import 'package:pharmaclickapp/pharmacyAccount/PharmacyAccount.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -159,97 +162,7 @@ class _BottomNavBarV2State extends State<BottomNavBarV2> {
   }
 }
 
-class Contact extends StatelessWidget {
-  const Contact({
-    Key key,
-  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.green,
-          title: Text(
-            'تواصل معانا',
-            style: TextStyle(
-              fontFamily: "arn",
-            ),
-          ),
-          centerTitle: true,
-        ),
-        body: Directionality(
-          textDirection: TextDirection.rtl,
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 8),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(4)),
-                    width: MediaQuery.of(context).size.width,
-                    child: Text(
-                      'للتواصل و الاستعلام عن البرنامج يسعدنا تواصلك معانا عن طريق',textAlign: TextAlign.justify,
-                      style: TextStyle(
-                          fontSize: 20, fontFamily: "arn", color: Colors.green),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 4),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(4)),
-                    width: MediaQuery.of(context).size.width,
-                    child: Row(
-                      children: [
-                        Text(
-                          'لتواصل و الاستعلام عن البرنامج يسعدنا تواصلك معانا عن طريق',
-                          style: TextStyle(
-                              fontSize: 20, fontFamily: "arn", color: Colors.green),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 4),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(4)),
-                    width: MediaQuery.of(context).size.width,
-                    child: Text(
-                      'لتواصل و الاستعلام عن البرنامج يسعدنا تواصلك معانا عن طريق',
-                      style: TextStyle(
-                          fontSize: 20, fontFamily: "arn", color: Colors.green),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 4),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(4)),
-                    width: MediaQuery.of(context).size.width,
-                    child: Text(
-                      'لتواصل و الاستعلام عن البرنامج يسعدنا تواصلك معانا عن طريق',
-                      style: TextStyle(
-                          fontSize: 20, fontFamily: "arn", color: Colors.green),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ));
-  }
-}
 
 class Updates extends StatelessWidget {
   const Updates({
@@ -404,22 +317,7 @@ class tutsElemnt extends StatelessWidget {
   }
 }
 
-class PharmacyAccount extends StatelessWidget {
-  const PharmacyAccount({
-    Key key,
-  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        child: Center(
-      child: Text(
-        'PharmacyAccount',
-        style: TextStyle(fontSize: 65),
-      ),
-    ));
-  }
-}
 
 class Tuts extends StatelessWidget {
   const Tuts({
