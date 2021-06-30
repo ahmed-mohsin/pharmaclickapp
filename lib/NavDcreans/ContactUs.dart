@@ -51,7 +51,7 @@ class Contact extends StatelessWidget {
                   children: [
 
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: SizedBox(
                           //width: MediaQuery.of(context).size.width * .5,
                           child: InkWell( onTap: () async {
@@ -80,7 +80,7 @@ class Contact extends StatelessWidget {
                           )),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: SizedBox(
                          // width: MediaQuery.of(context).size.width * .5,
                           child: InkWell( onTap: () async {
@@ -109,7 +109,7 @@ class Contact extends StatelessWidget {
                           )),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: SizedBox(
                         //  width: MediaQuery.of(context).size.width * .5,
                           child: InkWell( onTap: () async {
@@ -138,7 +138,7 @@ class Contact extends StatelessWidget {
                           )),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: SizedBox(
                        //   width: MediaQuery.of(context).size.width * .5,
                           child: InkWell( onTap: () async {

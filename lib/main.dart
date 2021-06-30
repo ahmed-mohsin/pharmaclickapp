@@ -162,8 +162,6 @@ class _BottomNavBarV2State extends State<BottomNavBarV2> {
   }
 }
 
-
-
 class Updates extends StatelessWidget {
   const Updates({
     Key key,
@@ -317,8 +315,6 @@ class tutsElemnt extends StatelessWidget {
   }
 }
 
-
-
 class Tuts extends StatelessWidget {
   const Tuts({
     Key key,
@@ -371,9 +367,66 @@ class _MainScreenState extends State<MainScreen> {
   List<String> _images = List();
   List<String> _headers = List();
   List<String> _features = List();
+  List<String> _features2 = List();
 
   @override
   void initState() {
+    _features2
+          ..add(
+              'البرنامج ادارة كاملة للصيدلية 100% بكل نواحيها التجارية و المالية ومتابعة العملاء و الشركات')
+          ..add(
+              'تحديث قاعدة البيانات لتحتوى على اكثر من 27 الف صنف بالاسعار الجديدة والباركود الدولي')
+          ..add(
+              'التحكم فى كل اقسام البرنامج بالتفعيل والايقاف  مثال سيستم المخزون التلقائي و تجهيز الطلبيات و الحضور و الانصراف و الديون')
+          ..add(
+              'امكانية ربط اي عدد من نقاط البيع بكل بساطة و فصل درج الكاشير لكل جهاز')
+          ..add(
+              'نظام ادارة المخزون حسب رغبة وامكانيات المستخدم Optimised Stock')
+          ..add(
+              'طورنا مستوي الامان فهتلاقي حفظ تلقائي لكل لمسة في البرنامج كل ثانية و كمان فى باك اب بيتاخد بشكل تلقائي ممكن تتحكم فى معدل الوقت بدءا من ساعة وحتي 12 ساعة وكمان تقدر تحفظ الباك اب يدويا في اي وقت')
+          ..add(
+              'باك اب Backup Files بتتحفظ في 3 اماكن مختلفة على جهازك ممكن تظبطه يحفظ على فلاشة او هارد خارجي ودا هيديلك امان اعلى وكمان استعادة باك اب لو احتجت تنزل ويندوز جديد بتكون فى اقل من دقيقة')
+          ..add(
+              'نظام تتبع طلبات العملاء و متابعة الاصناف المطلوبة وووصلها فى المخزون')
+          ..add(
+              'تحديد الصلاحيات لكل فئة فى الصيدلية كاشير او مسؤول او مدير وامكانية اتاحة او غلق اي خاصية لاي فئة')
+          ..add('اضافة و تعديل بكل بساطة للاصناف و الموردين والعملاء')
+          ..add(
+              'تقدر تحفظ اي تقرير فى البرنامج على اكسيل زى الطلبيات و النواقص و المبيعات و تقفيل الايام و الاحصائيات حتي بيانات المخزون')
+          ..add('نظام توصيل للمنازل ومتابعة الطلب حتي عودة عامل التوصيل')
+          ..add(
+              'طبعا المعتاد فى اي برنامج بيع هتلاقيه وبكل بساطة وسهولة وبدون اي قيود')
+          ..add(
+              'المخزون التلقائي هيظبطلك مخزون الاصناف حسب ميزانيتك ومعدل بيعها الحقيقي بعد خصم المرتجع والتوالف')
+          ..add(
+              'فتح فواتير شراء ومرتجعات باي عدد مطلوب  سواء للشركات او العملاء')
+          ..add('حفظ تلقائي لكل اضافة فى اي فاتورة')
+          ..add(
+              'باركود خاص بالبرنامج و امكانية تعديلة لاي طابعة و كمان تقدر تطبع لكل صنف حسب المخزون او يدوي او تقدر تطبع طباعة مجمعة لكل الطلبية بضغطة واحدة')
+          ..add(
+              'تقدر تضيف اكواد متعددة ومختصرة و QR code لكل صنف باي عدد مطلوب')
+          ..add(
+              'قائمة سريعة فى شاشة البيع توصلك للاصناف بدون بحث او سكان وتقدر تعدل فيها براحتك ')
+          ..add(
+              'نظام حضور وانصراف عملي جدا حتي لو الموظفين مش بيسجلوا ان و اوت البرنامج هيتابع نشاطهم')
+          ..add(
+              'تقدر تشتري من العملاء او من الصيدليات المجاورة بكل بساطة من شاشة المبيعات')
+          ..add('تقفيل اليوم هتشوف الزيادة و العجز فى العهدة بوضوح شديد')
+          ..add(
+              'متابعة حركة الاصناف و التعديل اليدوي في المخزون وكمان هتقدر توقفه لو حابب في اي وقت')
+          ..add(
+              'متابعة متعلقات كل شركة والمبالغ المستحقة على الصيدلية ببساطة شديدة')
+          ..add(
+              'امكانية فتح فواتير بيع العملاء بعد حفظها و التعديل عليها بالحذف والاضافة ')
+          ..add(
+              'امكانية ربط خصم العملاء بخصم الشراء للاصناف و دا يضمنك انك ما تخسرش في اي بيعة لاي سبب')
+          ..add('تقدر تطبع فاتورة تسعير او بيان اسعار بدون حفظ الفاتورة')
+
+
+        // ..add('')
+        // ..add('')
+        // ..add('')
+        ;
     _features
       ..add(
           'https://scontent.fcai21-1.fna.fbcdn.net/v/t1.6435-9/178368903_306612707501399_7927093819376549802_n.png?_nc_cat=108&ccb=1-3&_nc_sid=973b4a&_nc_ohc=UoALy6f3K40AX-fS4a2&_nc_ht=scontent.fcai21-1.fna&oh=6a90908125b375ea32ed7abd2f1c1dd2&oe=60E9E4B4')
@@ -456,9 +509,10 @@ class _MainScreenState extends State<MainScreen> {
               (context, index) => Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 4),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
-                          height: 150,
+                          height: 200,
                           color: Colors.white,
                           child: Directionality(
                             textDirection: TextDirection.rtl,
@@ -485,14 +539,31 @@ class _MainScreenState extends State<MainScreen> {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                        Directionality(
+                          textDirection: TextDirection.rtl,
                           child: Container(
-                            height: MediaQuery.of(context).size.height - 250,
+                            height: MediaQuery.of(context).size.height * .65,
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.pinkAccent),
                                 color: Colors.pinkAccent.withAlpha(5),
                                 borderRadius: BorderRadius.circular(15)),
+                            child: Padding(
+                              padding: const EdgeInsets.only(bottom: 75),
+                              child: ListView.builder(
+                                  itemCount: _features2.length,
+                                  shrinkWrap: true,
+                                  itemBuilder: (cx, i) {
+                                    return Padding(
+                                      padding:EdgeInsets.only(
+                                              bottom: 4, left: 8, right: 8),
+                                      child: Text(
+                                        '# ' + _features2[i],textAlign: TextAlign.start,
+                                        style: TextStyle(
+                                            fontFamily: 'arn', fontSize: 20),
+                                      ),
+                                    );
+                                  }),
+                            ),
                           ),
                         ),
                       ],

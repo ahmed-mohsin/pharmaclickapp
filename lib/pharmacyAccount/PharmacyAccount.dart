@@ -314,7 +314,7 @@ class generalStaticsUnit extends StatelessWidget {
                   begin: 0,
                   end: value,
                   precision: 0,
-                  style: TextStyle(fontSize: 20, fontFamily: 'arn'),
+                  style: TextStyle(fontSize: 20, fontFamily: 'arn',color: Colors.grey),
                   duration: Duration(milliseconds: time),
                   curve: Curves.linear,
                 ),
