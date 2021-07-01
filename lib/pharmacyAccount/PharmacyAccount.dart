@@ -130,6 +130,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _obscureText,checkedValue;
   final TextEditingController password = new TextEditingController();
   final TextEditingController userName = new TextEditingController();
+  bool _validate = false;
 
   @override
   void initState() {
@@ -143,10 +144,10 @@ class _LoginScreenState extends State<LoginScreen> {
       _obscureText = !_obscureText;
     });
   }
-
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Log In'),
@@ -189,13 +190,13 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Directionality(
                 textDirection: TextDirection.ltr,
                 child: Form(
+                    key: _formKey,
                     child: Column(
-                  key: _formKey,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10,vertical: 8),
-                      child: TextField(
+                      child: TextFormField(
                         controller: userName,
                         autofocus: false,
                         style: TextStyle(fontSize: 15.0, color: Colors.black),
@@ -203,6 +204,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           border: InputBorder.none,
                           hintText: 'Username',
                           filled: true,
+                          errorText: _validate ? 'Value Can\'t Be Empty' : null,
                           fillColor: Colors.grey[200],
                           contentPadding: const EdgeInsets.only(
                               left: 14.0, bottom: 6.0, top: 8.0),
@@ -215,6 +217,12 @@ class _LoginScreenState extends State<LoginScreen> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                         ),
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return 'Please enter some text';
+                          }
+                          return null;
+                        },
                       ),
                     ),
                     Padding(
@@ -222,7 +230,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Stack(
                         alignment: const Alignment(0, 0),
                         children: <Widget>[
-                          TextField(
+                          TextFormField(
                             controller: password,
                             obscureText: _obscureText,
                             autofocus: false,
@@ -231,6 +239,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               border: InputBorder.none,
                               hintText: 'password',
                               filled: true,
+                              errorText: _validate ? 'Value Can\'t Be Empty' : null,
                               fillColor: Colors.grey[200],
                               contentPadding: const EdgeInsets.only(
                                   left: 14.0, bottom: 6.0, top: 8.0),
@@ -243,6 +252,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                             ),
+                            validator: (value) {
+                              if (value.isEmpty) {
+                                return 'Please enter some text';
+                              }
+                              return null;
+                            },
                           ),
                           Positioned(
                               right: 8,
