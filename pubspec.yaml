@@ -33,6 +33,8 @@ dependencies:
   url_launcher: ^6.0.6
   md2_tab_indicator: ^1.0.2
   mccounting_text: ^0.1.0
+  firebase_auth: ^2.0.0
+  firebase_core: ^1.3.0
 
 dependency_overrides:
   args: ^2.1.1
