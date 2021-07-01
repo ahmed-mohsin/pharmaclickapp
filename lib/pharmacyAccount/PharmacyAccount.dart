@@ -117,17 +117,186 @@ class StaticsScreen extends StatelessWidget {
   }
 }
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({
     Key key,
   }) : super(key: key);
 
   @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  bool _obscureText,checkedValue;
+  final TextEditingController password = new TextEditingController();
+  final TextEditingController userName = new TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _obscureText = true;
+    checkedValue = true;
+  }
+
+  void _toggle() {
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      child: Center(child: Text('Please log in first')),
+    final _formKey = GlobalKey<FormState>();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Log In'),
+        centerTitle: true,
+        backgroundColor: Colors.pink,
+      ),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: Center(
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Please log in first \n To Get Your Pharmacy Data',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'arn',
+                  fontSize: 20,
+                  color: Colors.pink,
+                  shadows: <Shadow>[
+                    Shadow(
+                      offset: Offset(1, 1),
+                      blurRadius: 3.0,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                    ),
+                    Shadow(
+                      offset: Offset(1.5, 1.5),
+                      blurRadius: 8.0,
+                      color: Colors.grey,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 15),
+              child: Directionality(
+                textDirection: TextDirection.ltr,
+                child: Form(
+                    child: Column(
+                  key: _formKey,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10,vertical: 8),
+                      child: TextField(
+                        controller: userName,
+                        autofocus: false,
+                        style: TextStyle(fontSize: 15.0, color: Colors.black),
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Username',
+                          filled: true,
+                          fillColor: Colors.grey[200],
+                          contentPadding: const EdgeInsets.only(
+                              left: 14.0, bottom: 6.0, top: 8.0),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.red),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Stack(
+                        alignment: const Alignment(0, 0),
+                        children: <Widget>[
+                          TextField(
+                            controller: password,
+                            obscureText: _obscureText,
+                            autofocus: false,
+                            style: TextStyle(fontSize: 15.0, color: Colors.black),
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'password',
+                              filled: true,
+                              fillColor: Colors.grey[200],
+                              contentPadding: const EdgeInsets.only(
+                                  left: 14.0, bottom: 6.0, top: 8.0),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.red),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.grey),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                              right: 8,
+                              child: GestureDetector(
+                                  onTap: _toggle,
+                                  child: Icon(_obscureText
+                                      ? Icons.visibility
+                                      : Icons.visibility_off)))
+                        ],
+                      ),
+                    ),
+                    CheckboxListTile(
+                      title: Text("Remember Me"),
+                      value: checkedValue,
+                      onChanged: (newValue) {
+                        setState(() {
+                          checkedValue = newValue;
+                          print(newValue);
+                        });
+                      },
+                      controlAffinity: ListTileControlAffinity.leading,  //  <-- leading Checkbox
+                    ),
+                    Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 50,horizontal: 10),
+                        child: Container(
+                          height: 50,
+                          width: double.infinity,
+                          child: RaisedButton(
+                            color: Colors.green,
+                            onPressed: () {
+                              // Validate returns true if the form is valid, or false
+                              // otherwise.
+                              if (_formKey.currentState.validate()) {
+                                // If the form is valid, display a Snackbar.
+                                Scaffold.of(context).showSnackBar(
+                                    SnackBar(content: Text('Processing Data')));
+                              }
+                            },
+                            child: Text(
+                              'Submit',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(18.0),
+                                side: BorderSide(color: Colors.green)),
+                          ),
+                        )),
+                  ],
+                )),
+              ),
+            )
+          ],
+        )),
+      ),
     );
   }
 }
