@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "563252647472",
+    "project_id": "pharmaclick-eae9f",
+    "storage_bucket": "pharmaclick-eae9f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563252647472:android:3563c78da1fa266fe8bff5",
+        "android_client_info": {
+          "package_name": "itcorner.app.pharmaclick.pharmaclickapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563252647472-1g8004qmlqitcipoojh3ot4kre9dv9db.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmgExLTF9L9pMqVEfYrfgkMqIxAqPnk7U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "563252647472-1g8004qmlqitcipoojh3ot4kre9dv9db.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
