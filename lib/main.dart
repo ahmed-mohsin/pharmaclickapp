@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:md2_tab_indicator/md2_tab_indicator.dart';
 import 'package:pharmaclickapp/NavDcreans/ContactUs.dart';
@@ -14,6 +15,9 @@ import 'package:url_launcher/url_launcher.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await FlutterDownloader.initialize(
+      debug: true // optional: set false to disable printing logs to console
+  );
   runApp(MyApp());
 }
 
